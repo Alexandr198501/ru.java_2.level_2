@@ -7,7 +7,7 @@ import java.util.Set;
 
 public class PhoneBook {
 
-// Сщздаю мапу.
+// Создаю мапу.
     Map<String, Set<String>> phoneBook = new HashMap<>();
 
 // Метод для добавления записи в справочник.
@@ -20,9 +20,8 @@ public class PhoneBook {
 
     }
 
-    // Метод для поиска записи по фамилии
+    // Метод для поиска записи по фамилии.
     public void get(String surname) {
-        phoneBook.get(surname);
         System.out.println(surname + ":" + phoneBook.get(surname));
     }
 
