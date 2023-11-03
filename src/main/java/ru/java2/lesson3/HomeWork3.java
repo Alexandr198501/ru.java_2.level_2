@@ -52,8 +52,6 @@ public class HomeWork3 {
         System.out.println(countWords);
 
 
-//------------------------------------------------------------------------------------------------------
-
         PhoneBook book = new PhoneBook();
         book.add("Vasin", "89030202233");
         book.add("Ivanov", "890305522353");

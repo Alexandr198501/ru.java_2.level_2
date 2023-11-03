@@ -7,10 +7,10 @@ import java.util.Set;
 
 public class PhoneBook {
 
-// Создаю мапу.
-    Map<String, Set<String>> phoneBook = new HashMap<>();
+    // Создаю мапу.
+    private Map<String, Set<String>> phoneBook = new HashMap<>();
 
-// Метод для добавления записи в справочник.
+    // Метод для добавления записи в справочник.
     public void add(String surname, String phoneNumber) {
         if (!phoneBook.containsKey(surname)) {
             phoneBook.put(surname, new HashSet<>());
@@ -21,8 +21,8 @@ public class PhoneBook {
     }
 
     // Метод для поиска записи по фамилии.
-    public void get(String surname) {
-        System.out.println(surname + ":" + phoneBook.get(surname));
+    public Set<String> get(String surname) {
+        return phoneBook.get(surname);
     }
 
 }
