@@ -37,11 +37,12 @@ public class EchoClient extends JFrame {
         socket = new Socket(SERVER_ADDR, SERVER_PORT);
         in = new DataInputStream(socket.getInputStream());
         out = new DataOutputStream(socket.getOutputStream());
+        final String END = "/end";
         new Thread(() -> {
             try {
                 while (true) {
                     String strFromServer = in.readUTF();
-                    if (strFromServer.equalsIgnoreCase("/end")) {
+                    if (strFromServer.equalsIgnoreCase(END)) {
                         break;
                     }
                     chatAria.append(strFromServer);

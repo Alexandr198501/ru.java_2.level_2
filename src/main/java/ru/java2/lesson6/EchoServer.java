@@ -11,6 +11,7 @@ import java.net.Socket;
 public class EchoServer {
     public static void main(String[] args) {
         try (ServerSocket serverSocket = new ServerSocket(8189)) {
+            final String END = "/end";
             System.out.println("Server start, wait connection...");
             Socket socket = serverSocket.accept();
             System.out.println("Client is connect");
@@ -20,7 +21,7 @@ public class EchoServer {
 
             while (true) {
                 String str = in.readUTF();
-                if (str.equals("/end")) {
+                if (str.equals(END)) {
                     break;
                 }
                 out.writeUTF("Эхо " + str);
